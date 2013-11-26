@@ -46,6 +46,9 @@ libOmxVdec-def += -D_ANDROID_ICS_
 #ifeq ($(TARGET_USES_ION),true)
 libOmxVdec-def += -DUSE_ION
 #endif
+ifneq ($(TARGET_NO_IOMMU),true)
+libOmxVdec-def += -DUSE_IOMMU
+endif
 
 # ---------------------------------------------------------------------------------
 # 			Make the Shared library (libOmxVdec)
